@@ -16,6 +16,10 @@
 
             <li class="nav-item active">
                 <a class="nav-link " href="ShowNotes.jsp"><i class="fa fa-bookmark" aria-hidden="true"></i> Show Notes</a>
+            </li
+            
+            <li class="nav-item active">
+                <a class="nav-link " href="SearchNotes.jsp"><i class="fa fa-bookmark" aria-hidden="true"></i> Search Notes</a>
             </li>
         </ul>
         <%
