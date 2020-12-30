@@ -24,7 +24,7 @@
                                 UsDao ud=new UsDao();
                                 
                                  if(bean!=null){
-                                 List<UserBean> list= ud.ShowNotes(bean.getId());
+                                 List<UserBean> list= ud.Search(bean.getId(),bean.getTitle());
                                 for(UserBean ubean:list)
                                 {
                                     %>
@@ -37,15 +37,7 @@
                             <h5 class="card-title"> <%= ubean.getTitle() %></h5>
                             <p><%= ubean.getContent() %></p>
                             
-                            <div class="container text-center my-2">
-                                <form action="DeleteServlet">
-                                    <input type="hidden" name="uid" value="<%= ubean.getId()%>">
-                                    <input type="hidden" name="ftitle" value="<%= ubean.getTitle()%>">
-                                    <input type="submit" value="Delete" class="btn btn-danger">
-                                </form>
-                                
-                                <a href="#" class="btn btn-primary">Edit</a>
-                            </div>
+                            
                         </div>
                     </div>
                                     

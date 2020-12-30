@@ -138,4 +138,41 @@ public class UsDao {
         
     }
     
+    
+    public List<UserBean> Search(String id,String title) throws Exception
+    {
+        Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/enotes","root", "root");
+        List<UserBean> list=new ArrayList<UserBean>();
+        UserBean ub;
+       
+        try {
+            String sql="select * from addnotes where id=? and title LIKE CONCAT('%'?'%')";
+             PreparedStatement ps=con.prepareStatement(sql);
+            ps.setString(1, id);
+            ps.setString(2, title);
+             ResultSet rs=ps.executeQuery();
+             if(rs.next())
+             {
+                 ub=new UserBean();
+                 ub.setId(rs.getString(1));
+                 ub.setTitle(rs.getString(2));
+                 ub.setContent(rs.getString(3));
+                 list.add(ub);
+             }
+             else
+             {
+                 ub=null;
+             }
+            
+            
+            
+        } catch (Exception e) {
+            System.out.println("ERROR SEARCH::----"+e);
+        }
+        return list;
+    }
+    
+    
+    
 }

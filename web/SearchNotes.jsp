@@ -10,7 +10,7 @@
     <body>
         <%@include file="BasicCode/Navbar.jsp" %>
         <div class="mt-5"> 
-        <form class="form-inline active-cyan-3 active-cyan-4">
+            <form class="form-inline active-cyan-3 active-cyan-4" action="SearchResult.jsp">
   
   <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
     aria-label="Search">
